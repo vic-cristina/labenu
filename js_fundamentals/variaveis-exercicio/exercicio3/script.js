@@ -10,7 +10,7 @@ const CPF = Number(prompt("Insira seu CPF"));
 
 const escolaridade = prompt("Insira seu nível de escolaridade");
 
-const CNH = prompt("Possui CNH? (sim ou não)");
+const CNH = confirm("Possui CNH? (sim ou não)");
 
 const qtdFilhos = Number(prompt("Possui quantos filhos?"));
 

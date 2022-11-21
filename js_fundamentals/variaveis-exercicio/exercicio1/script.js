@@ -1,24 +1,24 @@
 /* Exercício 1  - Parte 1 */
 
-let name; //a) Declare uma variável para armazenar um nome, sem atribuir um valor.
+let userName; //a) Declare uma variável para armazenar um nome, sem atribuir um valor.
 let age; //b) Declare uma variável para armazenar uma idade, sem atribuir um valor.
 
-console.log(typeof name, typeof age); //c) Imprima na tela o tipo dessas variáveis que acabou de criar, usando o comando `typeof`.
+console.log(typeof userName, typeof age); //c) Imprima na tela o tipo dessas variáveis que acabou de criar, usando o comando `typeof`.
 
-console.log(name, age);
+console.log(userName, age);
 /* d) Reflita: por que esse tipo foi impresso? 
 Variáveis inicializadas sem um valor retornam undefined.
-Em português, undefined === não definido -> Não foi definido um valor para a variável no escopo global, portanto não existe no compilador. */
+Em português, undefined === não definido -> Não foi definido um valor para a variável no escopo global, portanto a variável não existe no compilador. */
 
-name = null;
+userName = null;
 age = null;
 
-console.log(typeof name, typeof age);
-console.log(name, age);
+console.log(typeof userName, typeof age);
+console.log(userName, age);
 //Inicializadas como objetos intencionalmente vazios.
 
 /* e) Depois, disso, atualize o código para perguntar ao usuário seu nome e sua idade, atribuindo esses dois valores às variáveis que acabou de criar. */
-name = prompt("Qual é seu nome?");
+userName = prompt("Qual é seu nome?");
 age = Number(prompt("Qual é sua idade?"));
 console.log(name, age);
 console.log(typeof name, typeof age);
