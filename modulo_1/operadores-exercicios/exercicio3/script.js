@@ -26,6 +26,7 @@ const vendas = new Map([
   ["Abril", 1874.0],
   ["Maio", 7000.0],
   ["Junho", 9450.0],
+  ["Julho", 10000],
 ]);
 
 console.log("\n----- BRUTO -----");
