@@ -9,8 +9,10 @@ const verificaNacionalidade = (nacionalidade) => {
       break;
     case "argentina":
       console.log(nacionalidade);
+      break;
     case "uruguaia":
       console.log(nacionalidade);
+      break;
     case "chilena":
       console.log(nacionalidade);
     case "colombiana":

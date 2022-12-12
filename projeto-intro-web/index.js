@@ -71,16 +71,73 @@ const estradiolList = [
 //TODO Push all these objects into a big array in order to loop over them and retrive their values.
 
 //TODO Maybe .values() on the array to get plain text, push it into <p> tags, in case of the image property, setAttribute src.
+
 const container = document.querySelector(".container");
+const searchButton = document.querySelector(".search-button");
+let searchInput = document.querySelector(".search-input");
+
+// searchInput.addEventListener("keydown", (e) => {
+//   console.log(e.value);
+// });
+
+const compareInputValue = (input) => input === input;
+
+//TODO I've given each card a className according to the element.name in order to dynamically select and remove them
 
 estradiolList.forEach((element) => {
   console.log(element);
   container.innerHTML += `
-  <div class="card">
-      <p>${element.name}</p>
-      <p>${element.dosage}</p>
-      <p>${element.type}</p>
-      <p>${element.price}</p>
+  <div class="card ${element.name.toLowerCase().replace(" ", "")}">
+    <p>${element.name}</p>
+    <p>${element.dosage}</p>
+    <p>${element.type}</p>
+    <p>${element.price}</p>
     <img class="card-img" src=${element.img}>
+    <button type="submit">Add to cart</button>
   </div>`;
+});
+
+let cards = document.querySelectorAll(".card");
+// console.log(cards);
+
+// const selectProduct = (product, setProductName) => {
+//   let productCard = document.querySelector(
+//     `.${product.name.toLowerCase().replace(" ", "")}`
+//   );
+//   let productName = productCard.className.substring(5);
+//   console.log(productName, setProductName);
+// };
+
+const getProduct = (setProductName, productList) => {
+  container.innerHTML = ``;
+  productList.filter((product) => {
+    let productCard = document.querySelector(
+      `.${product.name.toLowerCase().replace(" ", "")}`
+    );
+    let productName = productCard.className.substring(5);
+    console.log(productName, setProductName);
+    //TODO --- .remove() doesn't seem like the best option, we need to filter them selectivelly. With .remove() it seems impossible to later retrive the right cards
+    if (productName === setProductName) {
+      for (const card of cards) {
+        const productName = card.className.substring(5);
+        console.log(productName);
+        // card.remove();
+        container.innerHTML += `  
+        <div class="card ${product.name.toLowerCase().replace(" ", "")}">
+        <p>${product.name}</p>
+        <p>${product.dosage}</p>
+        <p>${product.type}</p>
+        <p>${product.price}</p>
+        <img class="card-img" src=${product.img}>
+        <button type="submit">Add to cart</button>
+      </div>`;
+      }
+    }
+  });
+};
+
+searchButton.addEventListener("click", () => {
+  let searchInputRaw = searchInput.value;
+  let searchInputValue = searchInputRaw.toLowerCase().trim();
+  getProduct(searchInputValue, estradiolList);
 });

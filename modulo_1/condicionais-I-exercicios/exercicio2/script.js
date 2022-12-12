@@ -1,7 +1,3 @@
-const age = 27;
-const hasHighSchool = true;
-const isInCollege = false;
-
 const personalStatus = (age, hasHighSchool, isInCollege) => {
   if (age >= 18) {
     console.log(`You're above 18, cheers 🍷`);
@@ -28,4 +24,7 @@ const personalStatus = (age, hasHighSchool, isInCollege) => {
   }
 };
 
+const age = 27;
+const hasHighSchool = true;
+const isInCollege = false;
 personalStatus(age, hasHighSchool, isInCollege);

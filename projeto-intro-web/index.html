@@ -47,7 +47,7 @@
       }
 
       /* Style the search button */
-      button {
+      .search-button {
         background-color: #333;
         color: white;
         border: none;
@@ -101,13 +101,19 @@
       <a href="#">Home</a>
       <a href="#">About</a>
       <a href="#">Contact</a>
-      <form>
-        <input type="text" placeholder="Search..." />
-        <button>Search</button>
+      <form class="search-container">
+        <input
+          id="search-input"
+          class="search-input"
+          type="text"
+          name="search"
+          placeholder="Search..."
+        />
+        <button class="search-button" type="button">Search</button>
       </form>
     </nav>
     <div class="container">
-      <!-- <div class="card"></div> -->
+      <button type="button">Add to cart</button>
     </div>
   </body>
   <script src="
