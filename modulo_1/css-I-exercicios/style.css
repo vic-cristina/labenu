@@ -1,0 +1,33 @@
+main {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.bloco {
+  display: block;
+  line-height: 0.5;
+  color: #fff;
+  padding: 5px;
+  margin: 5px;
+  width: 300px;
+}
+
+#bloco-1 {
+  background-color: #e18f39;
+  border: 5px solid #f3c68f;
+}
+
+#bloco-2 {
+  background-color: #3c7f4e;
+  border: 5px solid #51a676;
+}
+
+#bloco-3 {
+  background-color: #1e4633;
+  border: 5px dashed #64cd7b;
+}
+
+#bloco-4 {
+  background-color: #dc3f2b;
+  border: 5px dashed #f1aea5;
+}
