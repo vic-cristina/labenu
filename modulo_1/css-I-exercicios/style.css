@@ -3,8 +3,15 @@ main {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+.block {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: space-between;
+  height: 1024px;
+}
+
 .bloco {
-  display: block;
   line-height: 0.5;
   color: #fff;
   padding: 5px;
