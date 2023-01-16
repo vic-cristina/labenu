@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: grid;
+  border: 1px solid black;
+  grid-template-columns: 1fr 3fr 1fr;
+  height: 50px;
+  align-items: center;
+  justify-items: center;
+}
+
+section:last-child {
+  grid-column: 3;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fill, 150px);
+}

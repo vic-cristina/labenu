@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+header {
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+  width: 8em;
+}
+
+main {
+  width: 99vw;
+  display: flex;
+  flex-direction: column;
+}
+
+aside {
+  width: 180px;
+  border: 1px solid black;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 2.25rem;
+  text-align: center;
+}
+
+aside:has(button:active) {
+  background-color: #000;
+  color: #fff;
+}
+
+button:active {
+  background-color: #fff;
+  color: #000;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  width: 99vw;
+  position: absolute;
+  bottom: 0;
+}
+
+button {
+  background-color: black;
+  color: white;
+  font-family: serif;
+}
+
+section {
+  align-self: center;
+  width: 50vw;
+  margin: 6.25rem;
+}
+
+div {
+  position: relative;
+}

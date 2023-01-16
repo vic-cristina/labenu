@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pharmacueticals</title>
+    <style>
+      /* Make the website take up the full width of the screen */
+      body {
+        margin: 0;
+        font-family: "Helvetica", Arial, sans-serif;
+        background-color: rgb(238, 219, 238);
+      }
+
+      /* Style the navigation bar */
+      nav {
+        background-image: linear-gradient(
+          to right,
+          rgb(145, 216, 229),
+          rgb(240, 182, 233)
+        );
+        /* background-color: pink; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5em;
+      }
+
+      /* Style the navigation bar links */
+      nav a {
+        color: rgb(108, 64, 125);
+        font-weight: lighter;
+        text-decoration: none;
+        padding: 0.5em;
+      }
+
+      /* Style the search form */
+      form {
+        display: flex;
+        align-items: center;
+      }
+
+      /* Style the search input */
+      input[type="text"] {
+        border: none;
+        padding: 0.5em;
+      }
+
+      /* Style the search button */
+      .search-button {
+        background-color: #333;
+        color: white;
+        border: none;
+        padding: 0.5em;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap: 1em;
+        margin: 0 auto;
+        max-width: 1280px;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .card {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 8px;
+        background: linear-gradient(
+          to right,
+          rgba(116, 116, 216, 0.2),
+          rgba(206, 143, 226, 0.4)
+        );
+      }
+
+      .card-img {
+        width: 12.5rem;
+        height: 12.5rem;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+
+      /* Make the website responsive */
+      @media only screen and (max-width: 600px) {
+        nav {
+          flex-direction: column;
+        }
+
+        nav a,
+        form {
+          margin-bottom: 0.5em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <form class="search-container">
+        <input
+          id="search-input"
+          class="search-input"
+          type="text"
+          name="search"
+          placeholder="Search..."
+        />
+        <button class="search-button" type="button">Search</button>
+      </form>
+    </nav>
+    <div class="container"></div>
+  </body>
+  <script src="
+  index.js"></script>
+</html>
