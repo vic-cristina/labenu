@@ -1,14 +1,15 @@
 import React from "react";
 import { db } from "../../db";
+import "./style.css";
 
 const Grid = () => {
   return (
-    <>
-      {db.forEach((element) => {
+    <main className="grid">
+      {db.map((element) => {
         return (
           <>
             <div
-              className={"card" + element.name.toLowerCase().replace(" ", "")}
+              className={"card " + element.name.toLowerCase().replace(" ", "")}
             >
               <p>{element.name}</p>
               <p>{element.dosage}</p>
@@ -20,7 +21,7 @@ const Grid = () => {
           </>
         );
       })}
-    </>
+    </main>
   );
 };
 
