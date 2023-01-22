@@ -67,18 +67,12 @@ const estradiolList = [
   ciclovular,
   mesigyna,
 ];
-
-//TODO Push all these objects into a big array in order to loop over them and retrive their values.
-
-//TODO Maybe .values() on the array to get plain text, push it into <p> tags, in case of the image property, setAttribute src.
+//COMMENT Here we push all these objects into a big array in order to gain access to array methods such as forEach() and filter().
 
 let container = document.querySelector(".container");
 const searchButton = document.querySelector(".search-button");
 let searchInput = document.querySelector(".search-input");
-
-// const compareInputValue = (input) => input === input;
-
-//TODO I've given each card a className according to the element.name in order to dynamically select and remove them
+//COMMENT Select the HTMLElements we need to manipulate
 
 estradiolList.forEach((element) => {
   console.log(element);
@@ -92,8 +86,7 @@ estradiolList.forEach((element) => {
     <button type="submit">Add to cart</button>
   </div>`;
 });
-
-let cards = document.querySelectorAll(".card");
+//COMMENT Iterate through the array to fill the container with data and render a number of elements === array.length.
 
 searchButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -103,6 +96,7 @@ searchButton.addEventListener("click", (e) => {
   console.log(searchInputValue);
   renderElements(estradiolList, searchInputValue);
 });
+//COMMENT Attaching a listener to our button to grab the values
 
 function renderElements(elements, filter) {
   let filteredElements = elements.filter((element) => {
@@ -121,6 +115,8 @@ function renderElements(elements, filter) {
       return element;
     }
   });
+  //COMMENT .filter() generates a new  array with the elements that match the filterInput. We need 5 different conditions because there are 5 properties to the elements(objects).
+
   console.log(filteredElements);
   container.innerHTML = "";
   for (let element of filteredElements) {
@@ -135,4 +131,5 @@ function renderElements(elements, filter) {
       </div>
     `;
   }
+  //COMMENT When renderElements() is called by the searchButton, we clear the container's content with an empty string, then for..of iterates the filteredElements array and renders the filteredElements on screen.
 }

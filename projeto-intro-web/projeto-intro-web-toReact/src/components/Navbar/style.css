@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: "Helvetica", Arial, sans-serif;
+  background-color: rgb(238, 219, 238);
+}
+
+/* Style the navigation bar */
+nav {
+  background-image: linear-gradient(
+    to right,
+    rgb(145, 216, 229),
+    rgb(240, 182, 233)
+  );
+  /* background-color: pink; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+}
+
+/* Style the navigation bar links */
+nav a {
+  color: rgb(108, 64, 125);
+  font-weight: lighter;
+  text-decoration: none;
+  padding: 0.5em;
+}
+
+/* Style the search form */
+form {
+  display: flex;
+  align-items: center;
+}
+
+/* Style the search input */
+input[type="text"] {
+  border: none;
+  padding: 0.5em;
+}
+
+/* Style the search button */
+.search-button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 0.5em;
+}
