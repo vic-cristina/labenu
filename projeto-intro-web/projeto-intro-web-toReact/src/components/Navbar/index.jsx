@@ -1,24 +1,28 @@
 import React, { useState } from "react";
+
 import "./style.css";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [search, setSearch] = useState("");
-  const [drug, setDrug] = useState(search);
+  // const [drug, setDrug] = useState(search);
 
   const handleChange = (e) => {
+    console.log(e.target.value);
     setSearch(e.target.value);
+    props.onSearch(search);
   };
 
   const handleClick = () => {
     /* 👇 "search" stores the input field value and it is updated every time the user types into the field, due to handleChange()*/
-    setDrug(search);
+    // props.onSearch(search);
+    props.isSearch(search);
   };
 
   return (
     <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="/">Reset array</a>
+      {/* <a href="#">About</a>
+      <a href="#">Contact</a> */}
       <form className="search-container">
         <input
           id="search-input"

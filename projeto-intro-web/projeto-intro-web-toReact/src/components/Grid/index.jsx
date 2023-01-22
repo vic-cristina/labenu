@@ -1,28 +1,27 @@
 import React from "react";
-import { db } from "../../db";
+
 import "./style.css";
 
-const Grid = () => {
-  return (
-    <main className="grid">
-      {db.map((element) => {
-        return (
-          <>
-            <div
-              className={"card " + element.name.toLowerCase().replace(" ", "")}
-            >
-              <p>{element.name}</p>
-              <p>{element.dosage}</p>
-              <p>{element.type}</p>
-              <p>{element.price}</p>
-              <img className="card-img" src={element.img} />
-              <button type="submit">Add to cart</button>
-            </div>
-          </>
-        );
-      })}
-    </main>
-  );
+const Grid = ({ items }) => {
+  const drugs = items.map((item, key) => {
+    return (
+      <>
+        <div
+          key={key}
+          className={"card " + item.name.toLowerCase().replace(" ", "")}
+        >
+          <p>{item.name}</p>
+          <p>{item.breed}</p>
+          <p>{item.weight}</p>
+          <p>{item.age}</p>
+          <img className="card-img" src={item.img} />
+          <button type="submit">Add to cart</button>
+        </div>
+      </>
+    );
+  });
+
+  return <main className="grid">{drugs}</main>;
 };
 
 export default Grid;
