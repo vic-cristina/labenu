@@ -1,0 +1,10 @@
+footer {
+  display: flex;
+  height: 120px;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  background-color: bisque;
+}
