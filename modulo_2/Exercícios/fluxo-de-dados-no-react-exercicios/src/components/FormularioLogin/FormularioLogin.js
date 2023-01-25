@@ -7,20 +7,46 @@ import {
   StyledLabel,
 } from "../FormularioPostagem/styled";
 
-const FormularioLogin = (props) => {
+const FormularioLogin = ({
+  userInfo,
+  onSetPageFlow,
+  onSetUserInfo,
+  onSetUserDisplay,
+}) => {
   const login = () => {
-    props.setPageFlow(2);
+    console.log(userInfo);
+    postUserData();
+    setTimeout(() => {
+      onSetPageFlow(2);
+    }, 2500);
   };
+
+  const postUserData = () => {
+    onSetUserDisplay(userInfo);
+  };
+
+  // const handleChangeName_OLD = (e) => {
+  //   onSetUserInfo(...userInfo, userInfo.set());
+  // };
+
+  const handleChangeName = (e) => {
+    onSetUserInfo(userInfo.set("username", e.target.value));
+  };
+
+  const handleChangeImgUrl = (e) => {
+    onSetUserInfo(userInfo.set("imgUrl", e.target.value));
+  };
+
   return (
     <FormContainer>
       <Form>
         <StyledLabel>
           Nome:
-          <Input type={"text"} />
+          <Input type={"text"} onChange={handleChangeName} />
         </StyledLabel>
         <StyledLabel>
           Foto de Perfil
-          <Input type={"text"} />
+          <Input type={"text"} onChange={handleChangeImgUrl} />
         </StyledLabel>
         <SendButton onClick={login}>Fazer Login</SendButton>
       </Form>

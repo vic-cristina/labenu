@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif
   }
 `;
 
@@ -20,19 +21,45 @@ const Container = styled.div`
 
 function App() {
   const [pageFlow, setPageFlow] = useState(1);
+  const [userDisplay, setUserDisplay] = useState(new Map());
+  const [postDisplay, setPostDisplay] = useState(new Map());
+  const [postInfo, setPostInfo] = useState(
+    new Map([
+      ["title", ""],
+      ["imgUrl", ""],
+      ["post", ""],
+    ])
+  );
+  const [userInfo, setUserInfo] = useState(
+    new Map([
+      ["username", ""],
+      ["imgUrl", ""],
+    ])
+  );
+  console.log("userInfo", userInfo, "\nuserDisplay", userDisplay);
+
   return (
     <>
       <GlobalStyle />
       <Container>
         <aside>
-          <Header />
+          <Header userDisplay={userDisplay} />
           {pageFlow === 1 ? (
-            <FormularioLogin setPageFlow={setPageFlow} />
+            <FormularioLogin
+              userInfo={userInfo}
+              onSetUserDisplay={setUserDisplay}
+              onSetUserInfo={setUserInfo}
+              onSetPageFlow={setPageFlow}
+            />
           ) : (
-            <FormularioPostagem />
+            <FormularioPostagem
+              postInfo={postInfo}
+              onSetPostInfo={setPostInfo}
+              onSetPostDisplay={setPostDisplay}
+            />
           )}
         </aside>
-        <TelaDaPostagem />
+        <TelaDaPostagem postDisplay={postDisplay} />
       </Container>
     </>
   );
