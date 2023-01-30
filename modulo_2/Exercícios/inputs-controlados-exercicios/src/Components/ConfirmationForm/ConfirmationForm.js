@@ -40,7 +40,10 @@ const ConfirmationForm = ({ onSetFormFlow }) => {
     validator.isDate(date) &&
     validator.isMobilePhone(phoneNumber) &&
     ethnicity !== null
-      ? onSetFormFlow(1)
+      ? setError("Enviando dados...") ??
+        setTimeout(() => {
+          onSetFormFlow(1);
+        }, 3000)
       : setError("Tente novamente");
   };
 

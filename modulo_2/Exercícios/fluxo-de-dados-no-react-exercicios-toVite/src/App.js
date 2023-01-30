@@ -19,26 +19,16 @@ const Container = styled.div`
   width: 100vw;
 `;
 
-
-
-
 function App() {
   const [pageFlow, setPageFlow] = useState(1);
-  const [userDisplay, setUserDisplay] = useState(new Map());
-  const [postDisplay, setPostDisplay] = useState(new Map());
-  const [postInfo, setPostInfo] = useState(
-    new Map([
-      ["title", ""],
-      ["imgUrl", ""],
-      ["post", ""],
-    ])
-  );
   const [userInfo, setUserInfo] = useState(
     new Map([
       ["username", ""],
       ["imgUrl", ""],
     ])
   );
+  const [userDisplay, setUserDisplay] = useState(new Map());
+
   console.log("userInfo", userInfo, "\nuserDisplay", userDisplay);
 
   return (
@@ -55,14 +45,10 @@ function App() {
               onSetPageFlow={setPageFlow}
             />
           ) : (
-            <FormularioPostagem
-              postInfo={postInfo}
-              onSetPostInfo={setPostInfo}
-              onSetPostDisplay={setPostDisplay}
-            />
+            <FormularioPostagem />
           )}
         </aside>
-        <TelaDaPostagem postDisplay={postDisplay} />
+        <TelaDaPostagem />
       </Container>
     </>
   );
