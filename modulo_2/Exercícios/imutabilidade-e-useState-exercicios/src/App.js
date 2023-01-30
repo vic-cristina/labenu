@@ -45,7 +45,6 @@ function App() {
             <PokemonCard
               key={babyPokemon.id}
               pokemon={pokemon[index]}
-              evolvedPokemon={evolvedPokemons}
               onEvolvePokemon={evolvePokemon}
             />
           );
