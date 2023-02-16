@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import CreatePlaylist from "../CreatePlaylist/CreatePlaylist";
 import Musicas from "../Musicas/Musicas";
 
 const playlistsLocal = [
@@ -61,6 +62,7 @@ function Playlists() {
           />
         );
       })}
+      <CreatePlaylist getAllPlaylists={getAllPlaylists} />
     </div>
   );
 }

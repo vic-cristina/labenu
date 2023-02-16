@@ -34,6 +34,8 @@ function App() {
         return <TelaCadastroEndereco mudarTela={mudarTela} />;
       case 4:
         return <TelaUsuarioCadastrado />;
+      default:
+        return "oi";
     }
   };
 
